@@ -4,58 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neural Axis</title>
-
-    <!-- PyScript (lets Python run in the browser) -->
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header>
-        <h1>Neural Axis</h1>
-        <p>Learn Python · Build Projects · Explore STEM</p>
-    </header>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Neural Axis</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#learn">Learn</a></li>
+        </ul>
+    </nav>
 
-    <section class="lesson">
-        <h2>Try Python in Your Browser</h2>
-        <p>Type Python code below and click “Run”.</p>
-
-        <py-script output="output">
-print("Welcome to Neural Axis!")
-        </py-script>
-
-        <div id="output" class="output"></div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1 class="title">Ignite Curiosity. Engineer the Future.</h1>
+        <p class="subtitle">A hands-on STEM hub for rockets, physics, coding, and AI.</p>
+        <button class="cta-button" onclick="scrollToSection('learn')">Explore</button>
     </section>
 
-    <section class="lesson">
-        <h2>Number Guessing Game</h2>
-        <p>Click run to play right on your website!</p>
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+        <h2>What is Neural Axis?</h2>
+        <p>
+            Neural Axis is a student-built STEM platform designed to teach real engineering and 
+            modern AI concepts through hands-on projects. From rocket design to coding neural 
+            networks, this is where curiosity turns into creation.
+        </p>
+    </section>
 
-        <py-script output="gameoutput">
-from random import randint
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects">
+        <h2>Project Ideas</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Rocket Design</h3>
+                <p>Build and simulate rocket engines, stabilize fins, and test aerodynamics.</p>
+            </div>
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>Learn neural networks, create simple models, and test them on real data.</p>
+            </div>
+            <div class="card">
+                <h3>Engineering Challenges</h3>
+                <p>Bridge building, CAD mini-projects, physics demos, and more.</p>
+            </div>
+        </div>
+    </section>
 
-secret = randint(1,10)
-print("Can you guess the number I picked?")
-
-guesses = 0
-
-while guesses < 3:
-    ans = int(input("Pick a number from 1 - 10: "))
-
-    if ans == secret:
-        print("You got this!")
-        break
-    else:
-        print("Nope try again.")
-        guesses += 1
-
-if guesses == 3:
-    print("Sorry the number was:", secret)
-        </py-script>
-
-        <div id="gameoutput" class="output"></div>
+    <!-- LEARNING SECTION -->
+    <section class="section" id="learn">
+        <h2>Learn Something New</h2>
+        <p>
+            Coming soon: interactive modules, simulations, coding challenges, and guided videos.
+        </p>
     </section>
 
     <script src="script.js"></script>

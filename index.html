@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neural Axis</title>
+
+    <!-- PyScript (lets Python run in the browser) -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Neural Axis</h1>
+        <p>Learn Python · Build Projects · Explore STEM</p>
+    </header>
+
+    <section class="lesson">
+        <h2>Try Python in Your Browser</h2>
+        <p>Type Python code below and click “Run”.</p>
+
+        <py-script output="output">
+print("Welcome to Neural Axis!")
+        </py-script>
+
+        <div id="output" class="output"></div>
+    </section>
+
+    <section class="lesson">
+        <h2>Number Guessing Game</h2>
+        <p>Click run to play right on your website!</p>
+
+        <py-script output="gameoutput">
+from random import randint
+
+secret = randint(1,10)
+print("Can you guess the number I picked?")
+
+guesses = 0
+
+while guesses < 3:
+    ans = int(input("Pick a number from 1 - 10: "))
+
+    if ans == secret:
+        print("You got this!")
+        break
+    else:
+        print("Nope try again.")
+        guesses += 1
+
+if guesses == 3:
+    print("Sorry the number was:", secret)
+        </py-script>
+
+        <div id="gameoutput" class="output"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
